@@ -1,10 +1,12 @@
 import Replicate from "replicate";
-import { readFile } from "node:fs/promises";
 import request from "request";
 import fs from "fs";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const replicate = new Replicate({
-    auth: "r8_0JJiCtTeM4EjeRype4xHWQG4VIxSaUq20w6MQ",
+    auth: process.env.REPLICATE_API_TOKEN,
 });
 
 async function main() {
